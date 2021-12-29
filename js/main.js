@@ -4,13 +4,14 @@ const typed = new Typed
     {
         strings: 
         [
-            'JasRockr_ '
-            , 'Web Development_ '
-            , 'Software Engineering_ '
+            'Data Architecture'
+            , 'Software Engineering'
+            , 'Web development'
+            , 'Video Game Development'
         ]
         ,typeSpeed: 50 //Velocidad en milisegundos para escribir
         ,startDelay: 300 //Tiempo que tarda en iniciar la animacion
-        ,backSpeed: 75  //Velocidd en milisegundos para borrar una letra
+        ,backSpeed: 75  //Velocidad en milisegundos para borrar una letra
         ,smartBackspace: true // Elimina solo las palabras nuevas en un string
         ,shuffle: false // Altera el orden en que se escriben las palabras
         ,backDelay: 1500 // Tiempo de espera después de escribir
