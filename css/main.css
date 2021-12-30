@@ -19,17 +19,15 @@ JasRockr CSS Root Default
 :root 
 {
   /* Paleta de colores */
-  --blanco: #FFFFFF;
-  --blancoTransparencia: rgba(255, 255, 255, .6);
-  --negro: #000000;
-  --negroTransparencia: rgba(0, 0, 0, 0.55);
-  --gris: #F2F2F2;
-  --grisOscuro: #353535;
-  --primario: rgba(128, 255, 128, 0.8);
-  --secundario: rgba(255, 0, 0, .6);
-  --gradianteBG: radial-gradient(#11581E, #041607);
+  --white: #FFFFFF;
+  --whiteClarity: rgba(255, 255, 255, .6);
+  --black: rgba(0, 0, 0, 0);
+  --blackClarity: rgba(0, 0, 0, 0.55);
+  --primary: rgba(255, 0, 0, .6);
+  --secondary: rgba(128, 255, 244, 0.8);
+  --gradianteBG: radial-gradient(#581111, #041607);
   --shadow: 
-      0 0 1ex rgba(51, 255, 51, 1),
+      0 0 1ex rgb(255, 82, 51),
       0 0 .2rem rgba(255, 255, 255, 0.8);
   --shadowBlack: 
   0 0 1ex rgb(26, 0, 0),
@@ -39,12 +37,11 @@ JasRockr CSS Root Default
   0 0 .2rem rgba(255, 255, 255, 0.8);
 
   /* Fuentes */
-  --fuente1: 'Zeyada', monospace;
-  --fuente2: 'Prompt', monospace;
-  --fuente3: 'Baloo Thambi 2', monospace;
+  --font1: 'Zeyada', monospace;
+  --font2: 'Prompt', monospace;
+  --font3: 'Baloo Thambi 2', monospace;
 }
  
-
 /** 02. Box Sizing **/
 html 
 {
@@ -59,21 +56,43 @@ html
 /** 03. Inicializacion Body **/
 body 
 {
-  background-color: var(--negroTransparencia);
-  font-family: var(--fuente2), var(--fuente3);
+  background-color: var(--blackClarity);
+  font-family: var(--font2);
 }
-
-
 
 /* ------------------------
           Styles
   -------------------->> */
 
+/** Body **/
+body 
+{
+  /* General */
+  min-height: 100vh;
+  font-size: 3.5rem;
+  color: var(--primary);
+  text-shadow: var(--shadow);
+  
+  /* Backgroud */
+  background-color: var(--black);
+  background-image: var(--gradianteBG), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  /* Flexbox */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+}
+
 /** Background Signal **/
 .noise 
 {
   pointer-events: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -90,7 +109,7 @@ body
 .overlay 
 {
   pointer-events: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -100,9 +119,9 @@ body
   background:
       repeating-linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0) 0,
-      rgba(0, 0, 0, 0.3) 50%,
-      rgba(0, 0, 0, 0) 100%);
+      var(--black) 0,
+      var(--blackClarity) 50%,
+      var(--black) 100%);
   background-size: auto .3rem;
   z-index: -4;
 }
@@ -111,7 +130,7 @@ body
 {
   content: "";
   pointer-events: none;
-  position: absolute;
+  position: fixed;
   display: block;
   top: 0;
   left: 0;
@@ -122,9 +141,14 @@ body
   background-image: linear-gradient(
       0deg,
       transparent 0%,
+      /*
       rgba(32, 128, 32, 0.2) 2%,
       rgba(32, 128, 32, 0.8) 3%,
       rgba(32, 128, 32, 0.2) 3%,
+      */
+      rgba(255, 0, 0, 0.2) 2%,
+      rgba(255, 0, 0, 0.8) 3%,
+      rgba(255, 0, 0, 0.2) 3%,
       transparent 100%);
   background-repeat: no-repeat;
   animation: scan 7.5s linear 0s infinite;
@@ -136,52 +160,37 @@ body
   35%, 100% { background-position: 0 100vh; }
 }
 
+
 /** Header **/
-header  .title
+
+.head 
 {
-  position: absolute;
-  top: .5em;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 5rem;
   display: flex;
+  flex-flow: column wrap;
   justify-content: center;
-  flex-wrap: wrap;
 }
 
-.title
+.head .title
 {
-  font-family:  var(--fuente1);
-  font-size: 3em;
-  color: var(--secundario);
-  text-shadow: var(--shadowRed);
+  align-self: center;
+  font-family:  var(--font1);
+  font-size: 12rem;
+  padding: 10rem 0 0;
+  /*color: var(--secondary);
+  text-shadow: var(--shadowRed);*/
 }
 
-
-/** Body **/
-  body 
+.head .subtitle
 {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  min-height: 100vh;
-  flex-direction: column;
-  background-color: var(--negro);
-  
-  background-image: var(--gradianteBG), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
-
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  
-  font-size: 3.5rem;
-  color: var(--primario);
-  text-shadow: var(--shadow);
+  align-self: center;
+  font-family:  var(--font2);
+  font-size: 5rem;
 }
 
-
+.highlighted 
+{
+  color: var(--white);
+}
 
 /** Container CLI **/
 .cli 
@@ -189,10 +198,10 @@ header  .title
   position: relative;
   width: 100%;
   height: auto;
-  padding: 5rem;
+  padding: 1.5rem 10%;
   text-transform: uppercase;
-  display: flex;
   line-height: 5rem;
+  display: flex;
   flex-wrap: wrap;
 }
 
@@ -203,7 +212,7 @@ header  .title
 
 .output 
 {
-  color: var(--primario);
+  color: var(--primary);
   text-shadow: var(--shadow);
 }
 
@@ -212,62 +221,52 @@ header  .title
   content: "> ";
 }
 
-.highlighted 
-{
-  color: var(--blanco);
-}
-
-
-
-
-
 
 /** Footer **/
 
 .nav
 {
- clear: both; 
- font-family: var(--fuente2);
- font-size: .6em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  
+  font-family: var(--font3);
+  font-size: 2.5rem; 
+  padding: 5rem 10% 0;
+
 }
 
-nav a 
+.nav a 
 {
-  color: var(--secundario);
+  color: var(--secondary);
   text-shadow: var(--shadowRed);
   text-decoration: none;
+  padding: .4rem 1.4rem .6rem;
 }
 
-span.bullet
+.bullet
 {
-  color: var(--negroTransparencia);
-}
-
-nav
-{
-  /*display: block;*/
-  padding: 2em;
-  /*
-  position: relative;
-  width: 100%;
-  height: auto;
-  padding: 5rem;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  font-size: 1.8rem; 
-  */
+  color: var(--blackClarity);
+  padding: 0rem 3rem;
 }
 
 /* Copyright */
 .copyright {
   width: 100%;
-  /*border-top: .1rem solid var(--blancoTransparencia);*/
-  background-color: var(--negroTransparencia);
-  color: var(--blanco);
+  border-top: .1rem dashed var(--primary);
+  background-color: var(--blackClarity);
+  color: var(--white);
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding: 1rem 0;
+/*
+  background-image: url("/img/bg_footer.png") ;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: .8;
+  */
 }
 
 .creditos-theme
@@ -277,11 +276,12 @@ nav
 
 .creditos-theme a
 {
-  color: var(--blancoTransparencia);
+  color: var(--whiteTransparencia);
   text-shadow: var(--shadowRed);
   text-decoration: none;
 }
 
+/*
 @media (max-width: 998px) 
 {
   footer 
@@ -289,3 +289,4 @@ nav
     padding: 4rem;
   }
 }
+*/

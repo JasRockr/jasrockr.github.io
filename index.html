@@ -18,6 +18,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Prompt:wght@100&family=Zeyada&display=swap" rel="stylesheet">
 
+        <!-- PrefixFree JS -->
+        <script src="./js/prefixfree.min.js" type="text/javascript"></script>
         <!-- Custom CSS -->
         <link rel="stylesheet" href="css/main.css">
     </head>
@@ -29,13 +31,11 @@
 
         <!-- Header -->
         <header class="head">
-            <span class="title">Json Rivera</span>
+            <div class="title">Json Rivera</div>
 
-            <section class="name">
-                <h1>
-                    <span class="highlighted typed"></span>
-                </h1>
-            </section>
+            <div class="subtitle">
+                <span class="highlighted typed"></span>
+            </div>
 
         </header>
 
@@ -45,7 +45,7 @@
             <section class="output-content">
                 <br>
                 <p class="output">
-                    
+                    <span class="typedCli"></span>
                 </p>
 
             </section>
@@ -53,36 +53,37 @@
         </main>
         <!-- .site-content -->
 
+        <!-- NAV MENU -->
+            <nav class="nav">
+                <a class="menu item1" title="About Json Rivera" href="#">About me</a>
+                <span class="bullet">&#8226</span>
+                <a class="menu item2" title="Source code of free projects (external link to github repository)" href="https://github.com/JasRockr" target="_blank">Source Code</a>
+                <span class="bullet">&#8226</span>
+                <a class="menu item3" title="Personal blog by Json Rivera" href="#">Blog</a>
+                <span class="bullet">&#8226</span>
+                <a class="menu item4" title="Contact with Json Rivera" href="#">Contact</a>
+            </nav>
+
         <!-- FOOTER -->
         <footer class="site-footer">
-            
-            <nav class="nav">
-                <a title="About Json Rivera" href="#">About me</a>
-                <span class="bullet">&#8226</span>
-                <a title="Source code of free projects (external link to github repository)" href="https://github.com/JasRockr" target="_blank">Source Code</a>
-                <span class="bullet">&#8226</span>
-                <a title="Personal blog by Json Rivera" href="#">Blog</a>
-                <span class="bullet">&#8226</span>
-                <a title="Contact with Json Rivera" href="#">Contact</a>
-            </nav>
+
+            <!-- COPYRIGHT © -->
+            <div class="copyright">
+                <p>
+                    Json Rivera 2021 Sin derechos reservados. V 1.0 REV. 1
+                    <br>
+                    <p class="creditos-theme">
+                        80s hacker theme &#8226
+                        Style by
+                            <a title="Style owner" href="https://codepen.io/robinselmer/pen/vJjbOZ" target=“_blank”> 
+                                @robinSelmer
+                            </a> 
+                    </p>
+                </p>
+            </div>
 
         </footer> 
         <!-- .site-footer -->
-
-        <!-- COPYRIGHT © -->
-        <div class="copyright">
-            <p>
-                Json Rivera 2021 Sin derechos reservados. V 1.0 REV. 1
-                <br>
-                <p class="creditos-theme">
-                    80s hacker theme &#8226
-                    Style by
-                        <a title="Style owner" href="https://codepen.io/robinselmer/pen/vJjbOZ" target=“_blank”> 
-                            @robinSelmer
-                        </a> 
-                </p>
-            </p>
-        </div>
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/0b7619accd.js" crossorigin="anonymous"></script>
@@ -90,6 +91,7 @@
     <script src="./js/typed.js"></script>
     
     <script src="./js/main.js"></script>
+    
 
     </body>
 
