@@ -24,8 +24,9 @@ JasRockr CSS Root Default
   --black: rgba(0, 0, 0, 0);
   --blackClarity: rgba(0, 0, 0, 0.55);
   --primary: rgba(255, 0, 0, .6);
-  --secondary: rgba(128, 255, 244, 0.8);
-  --gradianteBG: radial-gradient(#581111, #041607);
+  /* --secondary: rgba(128, 255, 244, 0.8); */
+  /* --gradientBG: radial-gradient(#000000, #ff0000); */
+  --bg: rgba(0, 0, 0, 1);
   --shadow: 
       0 0 1ex rgb(255, 82, 51),
       0 0 .2rem rgba(255, 255, 255, 0.8);
@@ -40,6 +41,7 @@ JasRockr CSS Root Default
   --font1: 'Zeyada', monospace;
   --font2: 'Prompt', monospace;
   --font3: 'Baloo Thambi 2', monospace;
+
 }
  
 /** 02. Box Sizing **/
@@ -74,19 +76,20 @@ body
   text-shadow: var(--shadow);
   
   /* Backgroud */
-  background-color: var(--black);
-  background-image: var(--gradianteBG), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+  /* background-color: var(--black);
+  background-image: var(--bg), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: fixed; */
 
   /* Flexbox */
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-direction: column;
   justify-content: space-between;
   align-content: center;
 }
+
 
 /** Background Signal **/
 .noise 
@@ -97,7 +100,7 @@ body
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100%;
+  flex-basis: 100%;
   height: 100%;
   background-image: url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
   background-repeat: no-repeat;
@@ -114,7 +117,7 @@ body
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100%;
+  flex-basis: 100%;
   height: 100%;
   background:
       repeating-linear-gradient(
@@ -136,19 +139,14 @@ body
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100%;
+  flex-basis: 100%;
   height: 100%;
   background-image: linear-gradient(
       0deg,
       transparent 0%,
-      /*
-      rgba(32, 128, 32, 0.2) 2%,
-      rgba(32, 128, 32, 0.8) 3%,
-      rgba(32, 128, 32, 0.2) 3%,
-      */
-      rgba(255, 0, 0, 0.2) 2%,
-      rgba(255, 0, 0, 0.8) 3%,
-      rgba(255, 0, 0, 0.2) 3%,
+      rgba(97, 33, 33, 0.13) 2%,
+      rgba(112, 0, 0, 0.493) 3%,
+      rgba(97, 33, 33, 0.13) 3%,
       transparent 100%);
   background-repeat: no-repeat;
   animation: scan 7.5s linear 0s infinite;
@@ -168,6 +166,7 @@ body
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
+  
 }
 
 .head .title
@@ -176,8 +175,35 @@ body
   font-family:  var(--font1);
   font-size: 12rem;
   padding: 10rem 0 0;
-  /*color: var(--secondary);
-  text-shadow: var(--shadowRed);*/
+}
+
+@media (max-width: 1024px ) 
+{
+  .head .title
+  {
+    font-size: 9rem;
+  } 
+}
+
+@media (max-width: 520px ) 
+{
+  .head .title
+  {
+    font-size: 5rem;
+  } 
+}
+
+.head .title a
+{
+  text-decoration: none;
+  color: var(--white);
+  text-shadow: var(--shadowBlack);  
+}
+
+.head .title a:hover
+{
+  color: var(--primary);
+  text-shadow: var(--shadowRed);
 }
 
 .head .subtitle
@@ -187,22 +213,49 @@ body
   font-size: 5rem;
 }
 
+@media (max-width: 1024px ) 
+{
+  .head .subtitle
+  {
+    font-size: 3.5rem;
+  } 
+}
+
+@media (max-width: 520px ) 
+{
+  .output p
+  {
+    font-size: 1.8rem;
+  }
+}
+
 .highlighted 
 {
   color: var(--white);
 }
 
+/* .profile {
+  border-radius: 50%;
+  fle: 18rem;
+  box-shadow: 0 1rem 2rem .5rem rgba(0,0,0,.5);
+  
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+} */
+
+
+
 /** Container CLI **/
 .cli 
 {
   position: relative;
-  width: 100%;
+  flex-basis: 100%;
   height: auto;
   padding: 1.5rem 10%;
   text-transform: uppercase;
-  line-height: 5rem;
+  line-height: 3rem;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .output-content
@@ -210,15 +263,34 @@ body
   padding: 4rem;
 }
 
-.output 
+.output p
 {
-  color: var(--primary);
-  text-shadow: var(--shadow);
+  color: var(--whiteClarity);
+  text-shadow: var(--shadowBlack);
+  text-align: justify;
+  font-size: 1.8rem;
 }
 
-.output::before 
+.output p::before 
 {
-  content: "> ";
+  content: "\2023";
+}
+
+@media (max-width: 1024px ) 
+{
+  .output p
+  {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 520px ) 
+{
+  .output p
+  {
+    line-height: 2.3rem;
+    font-size: 1rem;
+  }
 }
 
 
@@ -233,16 +305,34 @@ body
   
   font-family: var(--font3);
   font-size: 2.5rem; 
-  padding: 5rem 10% 0;
+  /* padding: 5rem 10%; */
 
+}
+
+@media (max-width: 1024px ) 
+{
+  .nav
+  {
+    font-size: 2rem;
+    flex-flow: column;
+    align-items: center;
+    /* padding: 5rem 10%; */
+  }
+  
 }
 
 .nav a 
 {
-  color: var(--secondary);
-  text-shadow: var(--shadowRed);
+  color: var(--white);
+  text-shadow: var(--shadowBlack);
   text-decoration: none;
   padding: .4rem 1.4rem .6rem;
+}
+
+.nav a:hover
+{
+  color: var(--primary);
+  text-shadow: var(--shadowRed);
 }
 
 .bullet
@@ -251,9 +341,26 @@ body
   padding: 0rem 3rem;
 }
 
+@media (max-width: 1024px ) 
+{
+  .bullet
+  {
+    /* visibility:hidden; */
+    display: none;
+  }
+  
+}
+
+
+/** Footer **/
+footer 
+{
+  flex-basis: 100%;
+}
+
 /* Copyright */
 .copyright {
-  width: 100%;
+  flex-basis: 100%;
   border-top: .1rem dashed var(--primary);
   background-color: var(--blackClarity);
   color: var(--white);
@@ -276,7 +383,7 @@ body
 
 .creditos-theme a
 {
-  color: var(--whiteTransparencia);
+  color: var(--white);
   text-shadow: var(--shadowRed);
   text-decoration: none;
 }
