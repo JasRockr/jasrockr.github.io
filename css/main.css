@@ -90,7 +90,6 @@ body
   align-content: center;
 }
 
-
 /** Background Signal **/
 .noise 
 {
@@ -254,8 +253,11 @@ body
   padding: 1.5rem 10%;
   text-transform: uppercase;
   line-height: 3rem;
+
+/* Flexbox */
   display: flex;
   flex-wrap: nowrap;
+  align-self: center;
 }
 
 .output-content
@@ -289,10 +291,42 @@ body
   .output p
   {
     line-height: 2.3rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 
+.contact a
+{
+  text-decoration: none;
+  color: var(--white);
+  text-shadow: none;
+  font-size: 6rem;
+  padding: 0 2.5rem;
+}
+
+.contact a:hover
+{
+  color: var(--primary);
+  text-shadow: var(--shadowRed);
+}
+
+@media (max-width: 1024px ) 
+{
+  .contact a
+  {
+    font-size: 3rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 520px ) 
+{
+  .contact a
+  {
+    font-size: 2rem;
+    padding:  0 .5rem;
+  }
+}
 
 /** Footer **/
 
@@ -334,6 +368,15 @@ body
   color: var(--primary);
   text-shadow: var(--shadowRed);
 }
+
+.nav a:hover::before {
+  content: "[";
+}
+
+.nav a:hover::after {
+  content: "]";
+}
+
 
 .bullet
 {
