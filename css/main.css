@@ -24,7 +24,7 @@ JasRockr CSS Root Default
   --black: rgba(0, 0, 0, 0);
   --blackClarity: rgba(0, 0, 0, 0.55);
   --primary: rgba(255, 0, 0, .6);
-  /* --secondary: rgba(128, 255, 244, 0.8); */
+  --secondary: rgba(128, 255, 128, 0.8);
   /* --gradientBG: radial-gradient(#000000, #ff0000); */
   --bg: rgba(0, 0, 0, 1);
   --shadow: 
@@ -348,8 +348,8 @@ body
 
 .skills i:hover
 {
-  color: var(--primary);
-  text-shadow: var(--shadowRed);
+  color: var(--secondary);
+  text-shadow: var(--shadowBlack);
 }
 
 @media (max-width: 1024px ) 
