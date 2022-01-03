@@ -254,7 +254,7 @@ body
   text-transform: uppercase;
   line-height: 3rem;
 
-/* Flexbox */
+  /* Flexbox */
   display: flex;
   flex-wrap: nowrap;
   align-self: center;
@@ -322,6 +322,48 @@ body
 @media (max-width: 520px ) 
 {
   .contact a
+  {
+    font-size: 2rem;
+    padding:  0 .5rem;
+  }
+}
+
+.skills
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  padding-top: 4rem;
+}
+
+.skills i
+{
+  /* text-decoration: none; */
+  color: var(--white);
+  text-shadow: none;
+  font-size: 6rem;
+  padding: 0 2.5rem;
+}
+
+.skills i:hover
+{
+  color: var(--primary);
+  text-shadow: var(--shadowRed);
+}
+
+@media (max-width: 1024px ) 
+{
+  .skills i
+  {
+    font-size: 3rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 520px ) 
+{
+  .skills i
   {
     font-size: 2rem;
     padding:  0 .5rem;

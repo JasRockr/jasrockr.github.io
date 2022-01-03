@@ -22,7 +22,7 @@ const typed = new Typed
         ,contentType: 'html' //html o null para texto sin formato
     }
 );
-
+/* 
 const typedCli = new Typed
 (
     '.typedCli',
@@ -44,4 +44,4 @@ const typedCli = new Typed
         ,cursorChar: '_' // Caracter para el cursor
         ,contentType: 'html' //html o null para texto sin formato
     }
-);
+); */
