@@ -310,6 +310,7 @@ body
   text-shadow: var(--shadowRed);
 }
 
+
 @media (max-width: 1024px ) 
 {
   .contact a
@@ -350,6 +351,52 @@ body
 {
   color: var(--secondary);
   text-shadow: var(--shadowBlack);
+}
+
+/* Color  Hover Skills*/
+.skills .fa-html5:hover
+{
+  color: #F16529; 
+}
+
+.skills .fa-css3-alt:hover
+{
+  color: #409AD6; 
+}
+
+.skills .fa-js:hover
+{
+  color: #F6DD1C; 
+}
+
+.skills .fa-git-alt:hover
+{
+  color: #F34F29; 
+}
+
+.skills .fa-terminal:hover
+{
+  color: #000000; 
+}
+
+.skills .fa-database:hover
+{
+  color: #E31C25; 
+}
+
+.skills .fa-php:hover
+{
+  color: #6D73D1; 
+}
+
+.skills .fa-node-js:hover
+{
+  color: #2EA452; 
+}
+
+.skills .fa-python:hover
+{
+  color: #3673A6; 
 }
 
 @media (max-width: 1024px ) 
