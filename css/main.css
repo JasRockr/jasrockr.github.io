@@ -267,7 +267,7 @@ body
 
 .output p
 {
-  color: var(--whiteClarity);
+  color: var(--white);
   text-shadow: var(--shadowBlack);
   text-align: justify;
   font-size: 1.8rem;
@@ -283,6 +283,15 @@ body
   .output p
   {
     font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 2048px ) 
+{
+  .output p
+  {
+    padding: 0 30%;
+    align-self: center;
   }
 }
 
